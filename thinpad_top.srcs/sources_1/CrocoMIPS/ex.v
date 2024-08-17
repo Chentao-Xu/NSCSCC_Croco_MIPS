@@ -59,7 +59,7 @@ module ex (
           wdata_o = ($signed(reg2_i)) >>> reg1_i[4:0];
         end
         `EXE_SLT_OP: begin
-          wdata_o = ($signed(reg1_i) < $signed(reg2_i)) ? 1 : 0;  // 比较运算
+          wdata_o = ($unsigned(reg1_i) < $unsigned(reg2_i)) ? 1 : 0;  // 比较运算
         end
         `EXE_ADD_OP, `EXE_ADDU_OP, `EXE_ADDI_OP, `EXE_ADDIU_OP: begin
           wdata_o = reg1_i + reg2_i;  // 加法运算
