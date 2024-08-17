@@ -36,8 +36,8 @@ find_max:
 
 find_max_loop:
     lw       $t0, 0($a0)
-    slt      $t1, $t0, $v0           # sltu in cpu
-    bgtz     $t1, update_max
+    slt      $t1, $v0, $t0           # sltu in cpu
+    bne      $t1, ,$zero, update_max
     ori      $zero, $zero, 0         # nop
 
     addiu    $a0, $a0, 4
